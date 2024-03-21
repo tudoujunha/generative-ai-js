@@ -46,8 +46,9 @@ export class RequestUrl {
     public requestOptions: RequestOptions,
   ) {}
   toString(): string {
+    const baseURL = this.requestOptions?.baseURL || BASE_URL;
     const apiVersion = this.requestOptions?.apiVersion || DEFAULT_API_VERSION;
-    let url = `${BASE_URL}/${apiVersion}/${this.model}:${this.task}`;
+    let url = `${baseURL}/${apiVersion}/${this.model}:${this.task}`;
     if (this.stream) {
       url += "?alt=sse";
     }

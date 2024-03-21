@@ -116,6 +116,10 @@ export interface RequestOptions {
    * defaults to latest stable version.
    */
   apiVersion?: string;
+  /**
+   * Override the default base URL for the API.
+   */
+  baseURL?: string;
 }
 /**
  * Defines a tool that model can call to access external knowledge.
